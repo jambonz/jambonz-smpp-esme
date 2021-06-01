@@ -1,5 +1,5 @@
 {
-  "name": "jambonz-smpp-esme-client",
+  "name": "jambonz-smpp-esme",
   "version": "0.0.1",
   "description": "",
   "main": "app.js",
@@ -10,9 +10,13 @@
   "author": "Dave Horton",
   "license": "MIT",
   "dependencies": {
-    "@jambonz/node-smpp": "^0.6.2",
+    "@jambonz/db-helpers": "^0.6.10",
+    "@jambonz/node-smpp": "^0.6.5",
+    "@jambonz/realtimedb-helpers": "^0.4.1",
+    "bent": "^7.3.12",
     "express": "^4.17.1",
-    "pino": "^6.11.3"
+    "pino": "^6.11.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "^7.27.0",
