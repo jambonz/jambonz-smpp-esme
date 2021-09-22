@@ -16,6 +16,7 @@
     "bent": "^7.3.12",
     "express": "^4.17.1",
     "pino": "^6.11.3",
+    "sms-counter-npm": "^1.0.4",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
