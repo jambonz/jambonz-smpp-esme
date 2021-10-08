@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const opts = Object.assign({
   timestamp: () => `, "time": "${new Date().toISOString()}"`,
-  level: process.env.LOGLEVEL || 'info'
+  level: process.env.JAMBONES_LOGLEVEL || 'info'
 });
 const logger = require('pino')(opts);
 const port = process.env.HTTP_PORT || 3020;
@@ -30,9 +30,7 @@ app.locals = {
   ...app.locals,
   dbHelpers: {
     lookupSmppGatewaysByBindCredentials,
-    lookupAppByPhoneNumber
-  },
-  realtimeDbHelpers: {
+    lookupAppByPhoneNumber,
     retrieveSet
   },
   logger,
