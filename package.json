@@ -1,6 +1,6 @@
 {
   "name": "jambonz-smpp-esme",
-  "version": "v0.7.1",
+  "version": "v0.7.2",
   "description": "",
   "main": "app.js",
   "engines": {
@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-plugin-promise": "^6.0.0"
+    "eslint-plugin-promise": "^5.1.1"
   }
 }
