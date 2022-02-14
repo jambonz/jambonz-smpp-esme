@@ -19,6 +19,7 @@
     "@jambonz/realtimedb-helpers": "^0.4.24",
     "bent": "^7.3.12",
     "express": "^4.17.1",
+    "husky": "^7.0.4",
     "pino": "^6.11.3",
     "sms-counter-npm": "^1.0.4",
     "uuid": "^8.3.2"
