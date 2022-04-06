@@ -1,6 +1,6 @@
 {
   "name": "jambonz-smpp-esme",
-  "version": "v0.7.3",
+  "version": "v0.7.5",
   "description": "",
   "main": "app.js",
   "engines": {
