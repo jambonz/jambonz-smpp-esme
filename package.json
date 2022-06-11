@@ -16,7 +16,7 @@
   "dependencies": {
     "@jambonz/db-helpers": "^0.6.18",
     "@jambonz/node-smpp": "^0.6.5",
-    "@jambonz/realtimedb-helpers": "^0.4.28",
+    "@jambonz/realtimedb-helpers": "^0.4.29",
     "bent": "^7.3.12",
     "express": "^4.18.1",
     "pino": "^6.14.0",
