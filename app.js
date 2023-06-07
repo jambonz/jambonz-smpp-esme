@@ -37,7 +37,7 @@ const opts = Object.assign({
 const logger = require('pino')(opts);
 const port = process.env.HTTP_PORT || 3020;
 const smppPort = process.env.SMPP_PORT || 2775;
-const {retrieveSet} = require('@jambonz/realtimedb-helpers')(JAMBONES_REDIS_SENTINELS ?? {
+const {retrieveSet} = require('@jambonz/realtimedb-helpers')(JAMBONES_REDIS_SENTINELS || {
   host: process.env.JAMBONES_REDIS_HOST || 'localhost',
   port: process.env.JAMBONES_REDIS_PORT || 6379
 }, logger);
