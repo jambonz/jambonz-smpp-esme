@@ -6,30 +6,6 @@ if (process.env.JAMBONES_REDIS_SENTINELS) {
   assert.ok(process.env.JAMBONES_REDIS_HOST, 'missing JAMBONES_REDIS_HOST env var');
 }
 
-const JAMBONES_REDIS_SENTINELS = process.env.JAMBONES_REDIS_SENTINELS ? {
-  sentinels: process.env.JAMBONES_REDIS_SENTINELS.split(',').map((sentinel) => {
-    let host, port = 26379;
-    if (sentinel.includes(':')) {
-      const arr = sentinel.split(':');
-      host = arr[0];
-      port = parseInt(arr[1], 10);
-    } else {
-      host = sentinel;
-    }
-    return {host, port};
-  }),
-  name: process.env.JAMBONES_REDIS_SENTINEL_MASTER_NAME,
-  ...(process.env.JAMBONES_REDIS_SENTINEL_PASSWORD && {
-    password: process.env.JAMBONES_REDIS_SENTINEL_PASSWORD
-  }),
-  ...(process.env.JAMBONES_REDIS_SENTINEL_USERNAME && {
-    username: process.env.JAMBONES_REDIS_SENTINEL_USERNAME
-  }),
-  ...(process.env.JAMBONES_REDIS_SENTINEL_SENTINAL_PASSWORD && {
-    sentinelPassword: process.env.JAMBONES_REDIS_SENTINEL_SENTINAL_PASSWORD
-  }),
-} : null;
-
 const smpp = require('@jambonz/node-smpp');
 const express = require('express');
 const app = express();
@@ -40,10 +16,7 @@ const opts = Object.assign({
 const logger = require('pino')(opts);
 const port = process.env.HTTP_PORT || 3020;
 const smppPort = process.env.SMPP_PORT || 2775;
-const {retrieveSet} = require('@jambonz/realtimedb-helpers')(JAMBONES_REDIS_SENTINELS || {
-  host: process.env.JAMBONES_REDIS_HOST || 'localhost',
-  port: process.env.JAMBONES_REDIS_PORT || 6379
-}, logger);
+const {retrieveSet} = require('@jambonz/realtimedb-helpers')({}, logger);
 
 const {
   lookupSmppGatewaysByBindCredentials,
