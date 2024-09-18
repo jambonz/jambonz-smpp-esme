@@ -18,7 +18,7 @@
     "@jambonz/node-smpp": "^0.6.5",
     "@jambonz/realtimedb-helpers": "^0.8.8",
     "bent": "^7.3.12",
-    "express": "^4.19.2",
+    "express": "^4.20.0",
     "pino": "^8.20.0",
     "sms-counter-npm": "^1.0.4",
     "uuid": "^9.0.1"
